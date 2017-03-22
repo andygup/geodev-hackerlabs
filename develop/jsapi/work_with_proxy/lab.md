@@ -12,4 +12,4 @@ This lab covers the basics for allowing public, _no-login-required_ access to se
 
 5. Using the pulldown menu under `Service` select `route`. Then set `Request Limit` to `3` per second. Then click `Configure`.
 
-6. Copy the `Proxy Url` and paste it into the `RouteTask.url` property. Your app should now be ready to use.
+6. Copy the `Proxy Url` and replace the `RouteTask.url` string in your jsbin app. The app should now be ready to use.
