@@ -1,6 +1,6 @@
 ### Working with proxy
 
-This lab covers the basics for allowing public, _no-login-required_ access to secure ArcGIS Online services. 
+This lab covers the basics for allowing public, _no-login-required_ access to secure ArcGIS Online services using a service proxy hosted on ArcGIS Online.
 
 1. Click [work_with_proxy/index.html](../work_with_proxy/index.html) and copy the contents to a new [jsbin.com](http://jsbin.com).
 
