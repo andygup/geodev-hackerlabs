@@ -72,6 +72,6 @@ PRE-REQUISITE: Before starting this lab make sure you have a working web server 
 
 # Bonus
 
-* To learn implementing app logins and figuring out where to get the `clientId` and `clientSecret` go [here](https://developers.arcgis.com/authentication/accessing-arcgis-online-services/).
+* To learn about implementing app logins and figuring out how to get the `clientId` and `clientSecret` programmatically go [here](https://developers.arcgis.com/authentication/accessing-arcgis-online-services/).
 
 * For more info on proxy configuration settings check out the [Resource-Proxy docs](https://github.com/Esri/resource-proxy/blob/master/README.md#proxy-configuration-settings) or the [Working with Proxy Services article](https://developers.arcgis.com/authentication/working-with-proxies/).
