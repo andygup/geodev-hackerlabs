@@ -39,23 +39,16 @@
           "esri/symbols/SimpleMarkerSymbol",
           "esri/symbols/SimpleLineSymbol",
           "esri/Color",
-          "esri/core/urlUtils",
           "dojo/on",
           "dojo/domReady!"
       ], function(
           Map, MapView, Graphic, GraphicsLayer, RouteTask, RouteParameters,
-          FeatureSet, SimpleMarkerSymbol, SimpleLineSymbol, Color, urlUtils, on
+          FeatureSet, SimpleMarkerSymbol, SimpleLineSymbol, Color, on
       ) {
-
-          // proxy the route requests to avoid prompt for log in
-          urlUtils.addProxyRule({
-              urlPrefix: "route.arcgis.com",
-              proxyUrl: "http://localhost/proxy/proxy.ashx"
-          });
 
           // Point the URL to a valid route service
           var routeTask = new RouteTask({
-              url: "https://route.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World"
+              url: "YOUR_NEW_SERVICE_PROXY_URL"
           });
 
           // The stops and route result will be stored in this layer
