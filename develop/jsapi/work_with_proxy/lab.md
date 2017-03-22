@@ -33,7 +33,7 @@ PRE-REQUISITE: Before starting this lab make sure you have a working web server 
 
   urlUtils.addProxyRule({
         urlPrefix: "route.arcgis.com",
-        proxyUrl: "http://localhost/proxy.ashx"
+        proxyUrl: "http://localhost/proxy/proxy.ashx"
     });
 
 ```
