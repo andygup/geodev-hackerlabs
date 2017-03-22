@@ -1,6 +1,6 @@
 ### Working with proxy
 
-This lab covers the basics for allowing public, _no-log-required_ access to secure ArcGIS Online or Portal services secured with OAuth. 
+This lab covers the basics for allowing public, _no-login-required_ access to secure ArcGIS Online or Portal services secured with OAuth. 
 
 PRE-REQUISITE: Before starting this lab make sure you have a working web server installed on your laptop. Common web servers include IIS and Apache.
 
