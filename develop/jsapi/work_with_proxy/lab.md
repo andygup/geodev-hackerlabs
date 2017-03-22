@@ -1,77 +1,15 @@
 ### Working with proxy
 
-This lab covers the basics for allowing public, _no-login-required_ access to secure ArcGIS Online or Portal services secured with OAuth. 
+This lab covers the basics for allowing public, _no-login-required_ access to secure ArcGIS Online services. 
 
-PRE-REQUISITE: Before starting this lab make sure you have a working web server installed on your laptop. Common web servers include IIS and Apache.
+1. Click [work_with_proxy/index.html](../work_with_proxy/index.html) and copy the contents to a new [jsbin.com](http://jsbin.com).
 
-1. Create two new folders under your local web server root directory. Let's name one `geodev-hackerlabs` and the other `proxy`. We'll work with the `proxy` directory later on in the lab.
+2. Go to your ArcGIS Developers account, select [Dashboard](https://developers.arcgis.com/dashboard) and then select [Create New App](https://developers.arcgis.com/applications/#/new/).
 
-```javascript
+3. Give your new application a title, fill in the appropriate tags and give it a description. When you are done click `Register New Application`.
 
-    C:InetPub/wwwroot/
-    ├──proxy/
-    └──geodev-hackerlabs/
+4. Within the applications page select the `Authentication` tab at the top. Scroll down until you see the section titled `Configure New Service Proxy`.
 
-```
+5. Using the pulldown menu under `Service` select `route`. Then set `Request Limit` to `3` per second. Then click `Configure`.
 
-2. In the `geodev-hackerlabs` folder create a subdirectory called `working_with_proxy`. Copy the [index.html](index.html) file from this lab into your new folder.  
-
-```javascript
-
-    C:InetPub/wwwroot/
-    ├──proxy/    
-    └──geodev-hackerlabs/
-       └──working_with_proxy/
-          └──index.html
-
-```
-
-3. Now, in `index.html` modify the `proxyUrl` property so that it points to your local webserver directory path, for example:
- 
-```javascript
-
-  urlUtils.addProxyRule({
-        urlPrefix: "route.arcgis.com",
-        proxyUrl: "http://localhost/proxy/proxy.ashx"
-    });
-
-```
-
-4. We'll switch gears here and set up the proxy. Clone or download the [github.com/esri/resource-proxy](https://github.com/Esri/resource-proxy) repository to your laptop. 
-
-5. Find the resource-proxy type that works best for your webserver such as DotNet, Java or PHP. Then copy the contents of that folder into the `proxy` folder on your local web server. Your filesystem should now look similar to this:
-
-```javascript
-
-    C:InetPub/wwwroot/
-    ├──proxy/
-    │  └──Web.config
-    │  └──proxy.ashx
-    │  └──proxy.config
-    │  └──proxy.xsd 
-    └──geodev-hackerlabs/
-       └──working_with_proxy/
-          └──index.html
-
-```
-
-6. Go to [https://developers.arcgis.com/dashboard](https://developers.arcgis.com/dashboard) and [Register a New Application](https://developers.arcgis.com/applications/#/new/). 
-
-7. Within the `proxy.config` under `serverUrls` add a new `serverUrl` for the route service. Add the `clientId` and `clientSecret` from the application you registered in the previous step.
-
-```xml
-
-	<serverUrl url="https://route.arcgis.com"
-        clientId="6Xo1d-example-9Kn2"
-        clientSecret="5a5d50-example-c867b6efcf969bdcc6a2"
-        matchAll="true"/>
-
-```
-
-8. Load your local copy of `index.html` into your browser using the pattern `http://[your_local_web_server]/geodev-hackerlabs/`, then click on the map to add driving direction route stops. Be sure to check the developer console for any errors and fix them. You should be able to access the route service without manually log in.
-
-# Bonus
-
-* To learn about implementing app logins and figuring out how to get the `clientId` and `clientSecret` programmatically go [here](https://developers.arcgis.com/authentication/accessing-arcgis-online-services/).
-
-* For more info on proxy configuration settings check out the [Resource-Proxy docs](https://github.com/Esri/resource-proxy/blob/master/README.md#proxy-configuration-settings) or the [Working with Proxy Services article](https://developers.arcgis.com/authentication/working-with-proxies/).
+6. Copy the `Proxy Url` and paste it into the `RouteTask.url` property. Your app should now be ready to use.
